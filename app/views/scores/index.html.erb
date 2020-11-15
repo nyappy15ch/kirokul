@@ -9,20 +9,51 @@
     </div>
 
     <div class="hobbies">
-      <div class="hobby_name"><%= link_to "ゴルフ", "#", class:"hobby_links"%></div>
+      <div class="hobby_name"><%= link_to "ゴルフ", "#"%></div>
     </div>
 
     <div class="hobbies">
-      <div class="hobby_name"><%= link_to "サッカー", "#", class:"hobby_links"%></div>
+      <div class="hobby_name"><%= link_to "サッカー", "#"%></div>
     </div>
 
     <div class="hobbies">
-      <div class="hobby_name"><%= link_to "ランニング", "#", class:"hobby_links"%></div>
+      <div class="hobby_name"><%= link_to "ランニング", "#"%></div>
     </div>
   </div>
 <%# /趣味一覧表示 %>
 
 <%# スコア一覧表示 %>
-  <div class="score_side">スコア一覧</div>
+  <div class="score_side">
+    <div class="top">
+      <div class="title">趣味名</div>
+    </div>
+    <div class="middle">
+      <div class="todays_score">今日のスコア</div>
+      <%= form_with url:"", class:"form" do |f|%>
+        <div>自分のスコア</div>
+        <%= f.text_field :your_score, placeholder: "半角数字で入力" %>
+        <div>相手のスコア(任意)</div>
+        <%= f.text_field :rival_score, placeholder: "半角数字で入力"%>
+        <div>今日の感想</div>
+        <%= f.text_area :impression, class:"impression_form", rows:"3", placeholder: "気づいたこと・思ったことを入力！"%>
+        <div><%= f.submit "送信"%></div>
+      <% end%>
+    </div>
+    <div class="bottom">
+      <div class="upper">記録一覧</div>
+      <div class="lower">
+        <div class="date">2020/11/15</div>
+        <div class="results">100</div>
+      </div>
+      <div class="lower">
+        <div class="date">2020/11/22</div>
+        <div class="results">101</div>
+      </div>
+      <div class="lower">
+        <div class="date">2020/11/29</div>
+        <div class="results">95</div>
+      </div>
+    </div>
+  </div>
 <%# /スコア一覧表示 %>  
 </div>
