@@ -1,0 +1,30 @@
+.header{
+  background-color: gold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.kilokul_btn{
+  height: 20vh;
+  width: 15vw;
+  margin-left: 5px;
+}
+
+.logins{
+  display: flex;
+}
+
+.login{
+  margin: 10px;
+  padding: 15px 20px;
+  list-style: none;
+  border: #ffffff 2px solid;
+  border-radius: 5px;
+  background-color: #ffcc00;
+}
+
+.login_str{
+  color: #ffffff;
+}
