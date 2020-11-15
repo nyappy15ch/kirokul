@@ -1,3 +1,58 @@
-// Place all the styles related to the scores controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.main{
+  display: flex;
+}
+
+.hobby_side{
+  background-color: #eeeeee;
+  width: 210px;
+  height: 100vh;
+  text-align: center;
+  font-size: 10px;
+}
+
+.hobby_add_delete{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.hobby_add{
+  background-color: greenyellow;
+  border: 1px solid #bbbbbb;
+}
+
+.hobby_delete{
+  background-color: red;
+  border: 1px solid silver;
+  margin-right: 5px;
+}
+
+.hobby_delete_text{
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+.hobby_add, .hobby_delete{
+  font-size: 15px;
+  padding: 0px 5px;
+  width: 60px;
+}
+
+.hobbies{
+  border:1px ridge #ffffff;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hobby_name{
+  font-size: 20px;
+}
+
+.hobby_links{
+}
+
+.score_side{
+}

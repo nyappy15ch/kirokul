@@ -1,2 +1,28 @@
 <%= render "/shared/header"%>
-スコアーズのインデックスページ
+<div class="main">
+
+<%# 趣味一覧表示 %>
+  <div class="hobby_side">趣味一覧
+    <div class="hobby_add_delete">
+      <div class="hobby_add"><%= link_to "追加", "#"%></div>
+      <div class="hobby_delete"><%= link_to "削除", "#", class:"hobby_delete_text"%></div>
+    </div>
+
+    <div class="hobbies">
+      <div class="hobby_name"><%= link_to "ゴルフ", "#", class:"hobby_links"%></div>
+    </div>
+
+    <div class="hobbies">
+      <div class="hobby_name"><%= link_to "サッカー", "#", class:"hobby_links"%></div>
+    </div>
+
+    <div class="hobbies">
+      <div class="hobby_name"><%= link_to "ランニング", "#", class:"hobby_links"%></div>
+    </div>
+  </div>
+<%# /趣味一覧表示 %>
+
+<%# スコア一覧表示 %>
+  <div class="score_side">スコア一覧</div>
+<%# /スコア一覧表示 %>  
+</div>
