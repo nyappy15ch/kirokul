@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: kirokul_production
-  username: kirokul
-  password: <%= ENV['KIROKUL_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
