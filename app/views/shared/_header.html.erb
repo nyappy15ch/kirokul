@@ -5,7 +5,7 @@
 <div>
   <% if user_signed_in?%>
   <ul class="logins">
-    <li class="login"><%= link_to current_user.nickname, "#", class:"login_str"%></li>
+    <li class="login">こんにちは、<%= current_user.nickname%>さん。</li>
     <li class="login"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"login_str"%></li>
   </ul>
   <% else %>
