@@ -2,10 +2,12 @@
 <div class="main">
 
 <%# 趣味一覧表示 %>
-  <div class="hobby_side">趣味一覧
+  <div class="hobby_side">趣味を追加
     <div class="hobby_add_delete">
-      <div class="hobby_add"><%= link_to "追加", "#"%></div>
-      <div class="hobby_delete"><%= link_to "削除", "#", class:"hobby_delete_text"%></div>
+      <%= form_with url:hobbies_path, local: true do |f| %>
+      <%= f.text_field :hobby_name, placeholder:"趣味を入力", class:"hobby_add_form"%>
+      <%= f.submit "追加", class:"hobby_add_btn"%>
+      <% end%>
     </div>
 
     <div class="hobbies">
