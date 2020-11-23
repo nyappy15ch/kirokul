@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'scores#index'
+  root to: 'hobbies#index'
 
-  resources :hobbies, only:[:new, :create]
+  resources :hobbies, only:[:index, :new, :create] do
+    resources :scores, only:[:index, :create]
+  end
 end
