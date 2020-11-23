@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_22_021750) do
+ActiveRecord::Schema.define(version: 2020_11_22_054114) do
 
   create_table "hobbies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "hobby_name", null: false
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2020_11_22_021750) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_hobbies_on_user_id"
+  end
+
+  create_table "scores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "your_score", null: false
+    t.integer "rival_score"
+    t.bigint "user_id"
+    t.bigint "hobby_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hobby_id"], name: "index_scores_on_hobby_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -34,4 +45,6 @@ ActiveRecord::Schema.define(version: 2020_11_22_021750) do
   end
 
   add_foreign_key "hobbies", "users"
+  add_foreign_key "scores", "hobbies"
+  add_foreign_key "scores", "users"
 end

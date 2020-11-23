@@ -2,6 +2,7 @@
 <div class="main">
 
 <%# 趣味一覧表示 %>
+<% if user_signed_in?%>
   <div class="hobby_side">趣味を追加
     <div class="hobby_add_delete">
       <%= form_with url:hobbies_path, local: true do |f| %>
@@ -10,34 +11,27 @@
       <% end%>
     </div>
 
+    <% current_user.hobbies.each do |hobby| %>
     <div class="hobbies">
-      <div class="hobby_name"><%= link_to "ゴルフ", "#"%></div>
+      <div class="hobby_name"><%= link_to hobby.hobby_name, hobby_scores_path(hobby.id) %></div>
     </div>
-
-    <div class="hobbies">
-      <div class="hobby_name"><%= link_to "サッカー", "#"%></div>
-    </div>
-
-    <div class="hobbies">
-      <div class="hobby_name"><%= link_to "ランニング", "#"%></div>
-    </div>
+    <% end%>
   </div>
+<% end %>
 <%# /趣味一覧表示 %>
 
 <%# スコア一覧表示 %>
   <div class="score_side">
     <div class="top">
-      <div class="title">趣味名</div>
+      <div class="title"><%= @hobby.hobby_name %></div>
     </div>
     <div class="middle">
       <div class="todays_score">今日のスコア</div>
-      <%= form_with url:"", class:"form" do |f|%>
+      <%= form_with model:[@hobby,@score], class:"form", local: true do |f| %>
         <div>自分のスコア</div>
         <%= f.text_field :your_score, placeholder: "半角数字で入力" %>
         <div>相手のスコア(任意)</div>
         <%= f.text_field :rival_score, placeholder: "半角数字で入力"%>
-        <div>今日の感想</div>
-        <%= f.text_area :impression, class:"impression_form", rows:"3", placeholder: "気づいたこと・思ったことを入力！"%>
         <div><%= f.submit "送信"%></div>
       <% end%>
     </div>
